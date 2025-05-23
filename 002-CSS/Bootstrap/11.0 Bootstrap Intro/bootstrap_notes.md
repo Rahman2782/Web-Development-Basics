@@ -39,3 +39,21 @@ When using breakpoints, the @media queries arent that necessary
         <div class = "col">Hi</div>
     </div>
 </div> 
+
+# Important Bootstrap Classes
+### navbar-nav (Navigation List)
+- applied to a 'ul' element and is the primary container for navigation for boostrap nav
+- applies many CSS properties: display: flex, flex-direction: row, padding-left: 0, margin-bottom: 0, list-style: none (removes bulletpoints), --bs-scroll-height: 0 (for scrollable navbars)
+
+### nav-link (Individual Navigation Link)
+- applied to 'a' tags within each 'nav-item' (like li) and styles the clickable text for navigation
+- applies properties: display: block, padding: 0.5rem 1rem (to add spacing around the link text to visually seperate them from other links), color: rgba(0, 0, 0, 0.55), text-decoration: none, transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out
+
+
+### d-flex
+- display: flex;
+- turns in the element into a flex container also making its direct childreen flex containers
+- important when controlling the internal layout of an element's children
+- typically used on 'navbar-nav' (ul) to make its list items flex items
+- typically used on 'nav-link' (a) that has both an icon and text to make both flex items
+
