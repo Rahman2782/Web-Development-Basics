@@ -2,7 +2,7 @@
 var numOfButtons = document.querySelectorAll(".drum").length;
 
 for(var i = 0; i < numOfButtons; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    document.querySelectorAll(".drum")[i].addEventListener("click", function(event) {
         var selectedDrum = this.innerHTML;
         console.log(selectedDrum);
         playSound(selectedDrum);      
@@ -14,6 +14,10 @@ document.addEventListener("keydown", event => {
     console.log(event.key);
     playSound(event.key);
 });
+
+//NOTE: button click requires 'this' and not 'event' because a specific 
+//      DOM element is being interacted with. Keypress does not interact with the
+//      DOM, so it uses 'event' instead.
 
 
 function playSound(key) {
