@@ -2,10 +2,14 @@
 var numOfButtons = document.querySelectorAll(".drum").length;
 
 for(var i = 0; i < numOfButtons; i++) {
+
+    //function(event) is called a callback function - waits for the event to finish first, 
+    // and is then called back - callback is called when event occurs
     document.querySelectorAll(".drum")[i].addEventListener("click", function(event) {
         var selectedDrum = this.innerHTML;
         console.log(selectedDrum);
-        playSound(selectedDrum);      
+        playSound(selectedDrum);    
+        buttonAnimation(selectedDrum);  
     });
 }
 
@@ -13,6 +17,7 @@ for(var i = 0; i < numOfButtons; i++) {
 document.addEventListener("keydown", event => {
     console.log(event.key);
     playSound(event.key);
+    buttonAnimation(event.key);
 });
 
 //NOTE: button click requires 'this' and not 'event' because a specific 
@@ -54,4 +59,13 @@ function playSound(key) {
         default:
             console.log(selectedDrum);
     }
+}
+
+function buttonAnimation(key) {
+   var activeButton = document.querySelector(`.${key}`);
+   activeButton.classList.add("pressed");
+   
+   setTimeout(function() {
+    activeButton.classList.remove("pressed");
+   }, 100);
 }
