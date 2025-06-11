@@ -7,7 +7,16 @@ $(".btn").click(function() {
     userClickedPattern.push(userChosenColour);
     console.log(userChosenColour);
     playSound(userChosenColour);
+    animatePress(userChosenColour);
 })
+
+function animatePress(currentColour) {
+    $(`#${currentColour}`).addClass("pressed");
+
+    setTimeout(function() {
+        $(`#${currentColour}`).removeClass("pressed");
+    }, 100);
+}
 
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
