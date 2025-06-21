@@ -19,9 +19,4 @@ app.listen(port, "127.0.0.1", () => {
 
 //a port is like a lot of doors on the server, each one has an address
     //and through this port we can go inside our device and find our app that is listening
-    //in order to serve the website
-
-//a server has so many ports because it has to listen for many different incoming requests
-    //i.e. printers, keynote (phone for remote function), 
-
-//ctrl+c exits the server
+    //in order to
