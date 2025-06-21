@@ -1,9 +1,17 @@
-import express from "express";
-const app = express();
+const express = require("express");
 const port = 3000;
+const app = express();
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+app.get("/", (req, res) => {
+    res.send("<h1>Is this working?</h1>");
+}); 
+
+app.get("/about", (req, res) => {
+    res.send("<h1>About Me</h1>");
+});
+
+app.listen(port, "127.0.0.1", () => {
+    console.log("Server maybe started on port 3000"); 
 });
 
 //localhost is used when we dont have a server on the internet
@@ -15,3 +23,5 @@ app.listen(port, () => {
 
 //a server has so many ports because it has to listen for many different incoming requests
     //i.e. printers, keynote (phone for remote function), 
+
+//ctrl+c exits the server
