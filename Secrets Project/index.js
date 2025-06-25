@@ -3,7 +3,7 @@
 //The password is ILoveProgramming
 
 import express from "express";
-import bodyParser from "body-parser";
+import bodyParser from "body-parser"; //part of express now (express.urlencoded)
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -25,7 +25,7 @@ app.post("/check", (req, res) => {
         res.sendFile(__dirname + "/public/secret.html");
     }
     else {
-        res.sendFile(__dirname + "/public/index.html");
+        res.redirect("/");
     }
 })
 
